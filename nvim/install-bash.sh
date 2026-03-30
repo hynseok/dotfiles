@@ -1,10 +1,6 @@
 #! /bin/bash
 
-read -p "Do you want install LSPs? (y/n)? > " choice
-case "$choice" in 
-  y|Y ) source ~/dotfiles/nvim/install-lsp-bash.sh;;
-  * );;
-esac
+source ~/dotfiles/nvim/install-lsp-bash.sh
 
 rm -rf ~/.config/nvim
 mkdir -p ~/.config/nvim/
