@@ -12,7 +12,7 @@ return {
                 local version = vim.version()
                 local nvim_version_info = "  ⭐ v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
-                return "네가 심연을 들여다볼 때, 심연 또한 너를 들여다본다.\n"
+                return "용사 힘멜이라면 그렇게 했을테니까.\n"
 		.. datetime .. nvim_version_info
             end
 
