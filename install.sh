@@ -1,6 +1,10 @@
 #!/bin/bash
 # thanks larsks, https://stackoverflow.com/questions/75146772/how-to-detect-os-system-using-bash
 
+set -e
+
+DOTFILES_DIR="$HOME/dotfiles"
+
 . /etc/os-release
 
 case $ID in
@@ -11,15 +15,15 @@ case $ID in
 	echo "Try install it by yourself."
 	#sudo apt update && sudo apt install -y neovim
 	sudo apt install -y tmux
-	source ~/dotfiles/nvim/install-bash.sh
-	source ~/dotfiles/tmux/install-bash.sh
+	source $DOTFILES_DIR/nvim/install.sh
+	source $DOTFILES_DIR/tmux/install.sh
     ;;
 
   arch) echo "Detected distribution : Arch"
 	echo "Installing Dependencies.."
 	yes | sudo pacman -Syu && yes | sudo pacman -S nvim tmux
-	source ~/dotfiles/nvim/install-bash.sh
-	source ~/dotfiles/tmux/install-bash.sh
+	source $DOTFILES_DIR/nvim/install.sh
+	source $DOTFILES_DIR/tmux/install.sh
     ;;
 
   *) echo "Your distribution is not supported :("

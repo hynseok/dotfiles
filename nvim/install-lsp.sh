@@ -7,7 +7,7 @@ case $ID in
     ;;
 
   arch) 
-	yes | sudo pacman -Syu && yes | sudo pacman -S bear clangd lua-language-server python-lsp-server
+	yes | sudo pacman -Syu && yes | sudo pacman -S bear clang lua-language-server python-lsp-server
     ;;
 
   *) echo "Your distribution is not supported :("
