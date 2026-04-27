@@ -45,6 +45,13 @@ echo "Configuration update complete for $TARGET_FILE"
 
 source $TARGET_FILE
 
+echo "Installing metals"
+curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+chmod +x cs
+sudo mv cs /usr/local/bin/
+cs setup
+cs install metals
+
 . /etc/os-release
 
 case $ID in
